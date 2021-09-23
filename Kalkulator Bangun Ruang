@@ -1,0 +1,166 @@
+//Kalkulator Bangun Ruang
+//Agustinus Angelo Christian Fernando / 21 / 473804 / TK / 52235 / Kelompok Ruby
+#include <iostream>
+#include <math.h>
+
+#define PHI 3.14159 
+
+using namespace std;
+
+int main()
+{
+    double rusuk, panjang, lebar, diameter, radius, tinggi, apotema, luas_kerucut, luas_tabung, vol_kerucut, vol_tabung, luas_kubus, vol_kubus, luas_balok, vol_balok, luas_limas, vol_limas, luas_bola, vol_bola, luas_alas, luas_sisiTegak, luas_prisma, vol_prisma, keliling_alas;
+    char bentuk;
+
+    cout<<"\t\t=================================="<<endl;
+    cout<<"\t\tWelcome to Kalkulator Bangun Ruang"<<endl;
+    cout<<"\t\t\t  Made by: Nando"<<endl;
+    cout<<"\t\t=================================="<<endl;
+    
+    cout<<"==============="<<endl;
+    cout<<"Daftar Insisial"<<endl;
+    cout<<"==============="<<endl;
+    cout<<"Tabung  = t"<<endl;
+    cout<<"Kerucut = k"<<endl;
+    cout<<"Kubus   = u"<<endl;
+    cout<<"Balok   = b"<<endl;
+    cout<<"Bola    = o"<<endl;
+    cout<<"Limas   = l"<<endl;
+    cout<<"Prisma  = p"<<endl;
+
+    cout<<"=================================================================="<<endl;
+    cout<<"Masukkan bentuk bangun ruang yang diinginkan (Gunakan inisial) = ";
+    cin>>bentuk;
+    cout<<"=================================================================="<<endl;
+
+
+    if (bentuk == 't')
+    {
+        cout<<"Masukkan jari-jari = ";
+        cin>>radius;
+
+        cout<<"Masukkan tinggi = ";
+        cin>>tinggi;
+
+        luas_tabung = 2*PHI*radius*(radius + tinggi);
+        vol_tabung = PHI*radius*radius*tinggi;
+    
+        cout<<"==================================="<<endl;
+        cout<<"Luas Permukaan Tabung = "<<luas_tabung;
+        cout<<"\nVolume Tabung = "<<vol_tabung;
+        cout<<"\n==================================="<<endl;
+    }
+    else if(bentuk == 'k')
+    {
+        cout<<"Masukkan jari-jari = ";
+        cin>>radius;
+
+        cout<<"Masukkan tinggi = ";
+        cin>>tinggi;
+
+        apotema = (radius*radius) + (tinggi*tinggi); 
+        apotema = sqrt(apotema);
+        luas_kerucut = PHI*radius*(radius + apotema);
+        vol_kerucut = (PHI*radius*radius*tinggi)/3;
+
+        cout<<"=================================="<<endl;
+        cout<<"Luas Permukaan Kerucut = "<<luas_kerucut;
+        cout<<"\nVolume Kerucut = "<<vol_kerucut;
+        cout<<"\n=================================="<<endl;
+
+    }
+    else if(bentuk == 'u')
+    {
+        cout<<"Masukkan rusuk = ";
+        cin>>rusuk;
+
+        luas_kubus = 6*rusuk*rusuk;
+        vol_kubus = rusuk*rusuk*rusuk;
+
+        cout<<"=================================="<<endl;
+        cout<<"Luas Permukaan Kubus = "<<luas_kubus;
+        cout<<"\nVolume Kubus = "<<vol_kubus;
+        cout<<"\n=================================="<<endl;
+    }
+    else if(bentuk == 'b')
+    {
+        cout<<"Masukkan panjang = ";
+        cin>>panjang;
+        
+        cout<<"Masukkan lebar = ";
+        cin>>lebar;
+        
+        cout<<"Masukkan tinggi = ";
+        cin>>tinggi;
+
+        luas_balok = 2*panjang*lebar+2*panjang*tinggi+2*lebar*tinggi;
+        vol_balok = panjang*lebar*tinggi;
+
+        cout<<"=================================="<<endl;
+        cout<<"Luas Permukaan Balok = "<<luas_balok;
+        cout<<"\nVolume Balok = "<<vol_balok;
+        cout<<"\n=================================="<<endl;
+    }
+    else if(bentuk == 'o')
+    {
+        cout<<"Masukkan jari-jari = ";
+        cin>>radius;
+
+        luas_bola = 4*PHI*radius*radius;
+        vol_bola = (4*PHI*radius*radius*radius)/3;
+
+        cout<<"=================================="<<endl;
+        cout<<"Luas Permukaan Bola = "<<luas_bola;
+        cout<<"\nVolume Bola = "<<vol_bola;
+        cout<<"\n=================================="<<endl;
+    }
+    else if(bentuk == 'l')
+    {
+        cout<<"Masukkan luas alas = ";
+        cin>>luas_alas;
+        
+        cout<<"Masukkan luas sisi tegak = ";
+        cin>>luas_sisiTegak;
+        
+        cout<<"Masukkan tinggi = ";
+        cin>>tinggi;
+
+        luas_limas = luas_alas + luas_sisiTegak;
+        vol_limas = (luas_alas*tinggi)/3;
+
+        cout<<"=================================="<<endl;
+        cout<<"Luas Permukaan Limas = "<<luas_limas;
+        cout<<"\nVolume Limas = "<<vol_limas;
+        cout<<"\n=================================="<<endl;
+    }
+    else if(bentuk == 'p')
+    {
+        cout<<"Masukkan luas alas = ";
+        cin>>luas_alas;
+        
+        cout<<"Masukkan luas sisi tegak = ";
+        cin>>luas_sisiTegak;
+        
+        cout<<"Masukkan keliling alas = ";
+        cin>>keliling_alas;
+
+        cout<<"Masukkan tinggi = ";
+        cin>>tinggi;
+
+        luas_prisma = (2*luas_alas) + (keliling_alas*tinggi);
+        vol_prisma = luas_alas*tinggi;
+
+        cout<<"=================================="<<endl;
+        cout<<"Luas Permukaan Prisma = "<<luas_prisma;
+        cout<<"\nVolume Prisma = "<<vol_prisma;
+        cout<<"\n=================================="<<endl;
+    }
+    else
+    {
+        cout<<"Inisial bentuk salah!";
+    }
+
+    //Link Video Youtube: 
+
+    return 0;
+}
