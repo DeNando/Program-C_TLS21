@@ -160,7 +160,7 @@ int main()
         cout<<"Inisial bentuk salah!";
     }
 
-    //Link Video Youtube: 
+    //Link Video Youtube: https://www.youtube.com/watch?v=KbXuHvS9i48 
 
     return 0;
 }
